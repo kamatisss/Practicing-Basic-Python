@@ -1,0 +1,132 @@
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+import json
+import os
+
+
+def login():
+    username = e_username.get()
+    password = e_password.get()
+
+    if username == "admin" and password == "password":
+        messagebox.showinfo("Login Successful", "Welcome, Admin!")
+        root.deiconify()  # Show the biodata form
+        login_window.destroy()
+    else:
+        messagebox.showerror("Login Failed", "Invalid username or password.")
+
+def submit_info():
+    n = name_E.get()
+    a = age_E.get()
+    s = sex_V.get()
+    c = course_c.get()
+    sub = []
+
+    new_bio_info = {
+        "name": n,
+        "sex": s,
+        "age": a,
+        "course": c,
+        "Subjects": sub
+    }
+    if sub_V1.get() == 1:
+        sub.append("Programming 2")
+    if sub_V2.get() == 1:
+        sub.append("Contemporary World")
+    if sub_V3.get() == 1:
+        sub.append("PE")
+    if sub_V4.get() == 1:
+        sub.append("Discrete Math")
+
+    file = 'amante.json'
+    if os.path.exists(file):
+        with open(file, 'r') as r_file:
+            bio_info = json.load(r_file)
+            # print(student_info)
+
+    else:
+        bio_info = {"aa2_information": []}
+        with open(file, 'w') as c_file:
+            json.dump(bio_info, c_file, indent=3)
+
+    bio_info["aa2_information"].append(new_bio_info)
+    with open(file, 'w') as update_file:
+        json.dump(bio_info, update_file, indent=4)
+    messagebox.showinfo("BIODATA INFO", "DATA SAVED SUCCESSFULLY")
+
+
+# Create the login window
+login_window = Tk()
+login_window.title("Login")
+login_window.geometry("300x150")
+
+l_username = Label(login_window, text="Username:")
+l_username.pack()
+e_username = Entry(login_window)
+e_username.pack()
+
+l_password = Label(login_window, text="Password:")
+l_password.pack()
+e_password = Entry(login_window, show="*")
+e_password.pack()
+
+login_button = Button(login_window, text="Login", command=login)
+login_button.pack()
+
+
+# Create the biodata form window
+root = Tk()
+root.geometry("300x500")
+root.configure(bg="gray")
+root.withdraw()  # Hide the biodata form initially
+
+lb = Label(root, text=" Virtual Biodata ", background="Black", foreground="White", height=3, width=50)
+lb.pack()
+
+# Label
+name_L = Label(root, text="Name: ", background="white")
+age_L = Label(root, text="Age: ", background="white")
+sex_E = Label(root, text="Sex")
+course = Label(root, text="Course")
+
+# L_place
+name_L.place(x=20, y=75)
+age_L.place(x=20, y=100)
+sex_E.place(x=20, y=125)
+course.place(x=20, y=185)
+
+# Widgets
+sex_V = StringVar()
+sub_V1 = StringVar()
+sub_V2 = IntVar()
+sub_V3 = IntVar()
+sub_V4 = IntVar()
+name_E = Entry(root, width=30, highlightbackground="white")
+age_E = Entry(root, width=30, highlightbackground="white")
+sex_Em = Radiobutton(root, text="MALE", variable=sex_V, value="MALE")
+sex_Ef = Radiobutton(root, text="FEMALE", variable=sex_V, value="FEMALE")
+course_list = ["BSIT", "BSIS", "PA"]
+course_c = ttk.Combobox(root, values=course_list)
+sub_L = Label(root, text="Subject Enrolled", bg="black", foreground="white")
+sub_b1 = Checkbutton(root, text="Programming 2", offvalue=0, onvalue="Programming", variable=sub_V1)
+sub_b2 = Checkbutton(root, text="Contemporary World", offvalue=0, onvalue=1, variable=sub_V2)
+sub_b3 = Checkbutton(root, text="PE", offvalue=0, onvalue=1, variable=sub_V3)
+sub_b4 = Checkbutton(root, text="Discrete Math", offvalue=0, onvalue=1, variable=sub_V4)
+submit_b = Button(root, text="Submit", bg="black", fg="white", command=submit_info)
+
+# E_place
+name_E.place(x=75,y=75)
+age_E.place(x=75,y=100)
+sex_Em.place(x=75,y=125)
+sex_Ef.place(x=75,y=155)
+course_c.place(x=75,y=185)
+sub_L.place(x=75,y=205)
+sub_b1.place(x=75,y=230)
+sub_b2.place(x=75,y=255)
+sub_b3.place(x=75,y=280)
+sub_b4.place(x=75,y=305)
+submit_b.place(x=75,y=330)
+
+
+root.mainloop()

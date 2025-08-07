@@ -1,0 +1,90 @@
+{
+    "aa2_information": [
+        {
+            "name": "Harry ",
+            "sex": "s",
+            "age": "20",
+            "course": "PA",
+            "Subjects": [
+                "Contemporary World"
+            ]
+        },
+        {
+            "name": "Rica",
+            "sex": "s",
+            "age": "19",
+            "course": "BSIT",
+            "Subjects": [
+                "PE",
+                "Discrete Math"
+            ]
+        },
+        {
+            "name": "Rica",
+            "sex": "s",
+            "age": "19",
+            "course": "BSIS",
+            "Subjects": [
+                "Contemporary World"
+            ]
+        },
+        {
+            "name": "haha",
+            "sex": "s",
+            "age": "20",
+            "course": "BSIT",
+            "Subjects": [
+                "Contemporary World",
+                "PE"
+            ]
+        },
+        {
+            "name": "Rica",
+            "sex": "FEMALE",
+            "age": "19",
+            "course": "BSIT",
+            "Subjects": [
+                "Contemporary World"
+            ]
+        },
+        {
+            "name": "reeecap",
+            "sex": "MALE",
+            "age": "20000",
+            "course": "BSIT",
+            "Subjects": [
+                "Contemporary World"
+            ]
+        },
+        {
+            "name": "bago",
+            "sex": "FEMALE",
+            "age": "20999",
+            "course": "BSIS",
+            "Subjects": [
+                "PE"
+            ]
+        },
+        {
+            "name": "Amante",
+            "sex": "",
+            "age": "20",
+            "course": "BSIS",
+            "Subjects": []
+        },
+        {
+            "name": "",
+            "sex": "",
+            "age": "",
+            "course": "",
+            "Subjects": []
+        },
+        {
+            "name": "",
+            "sex": "",
+            "age": "",
+            "course": "",
+            "Subjects": []
+        }
+    ]
+}

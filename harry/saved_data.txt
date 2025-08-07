@@ -1,0 +1,38 @@
+Name:harry g amante
+Age: 20
+Sex: MALE    
+Course: BSIT 
+Subject Enrolled1011 Name:u
+Age: u
+Sex: MALE    
+Course: BSIT 
+Subject Enrolled000 
+Name:harryy g amante
+Age: 20
+Sex: MALE    
+Course: BSIT 
+Subject Enrolled000 
+
+Name:harry
+Age: 20
+Sex: MALE    
+Course: BSIT 
+Subject Enrolled000 
+
+Name:Harry G. Amante
+Age: 20
+Sex: MALE    
+Course: BSIT 
+Subject Enrolled['Contemporary World', 'PE', 'Discrete Math'] 
+
+Name:harry
+Age: 20
+Sex: MALE    
+Course: BSIS 
+Subject Enrolled: ['Contemporary World'] 
+
+Name:harry
+Age: 20
+Sex: MALE    
+Course: BSIT 
+Subject Enrolled: ['Contemporary World', 'PE'] 
